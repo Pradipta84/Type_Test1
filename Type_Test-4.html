@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #points {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="display"></div>
+    <input type="text" id="textinput" placeholder="Type a Name: 'Ramesh'" onkeyup="Update()">
+    <div id="points">Points: 0</div>
+
+    <script>
+        let arr1 = ["Ramesh", "Suresh", "Mahesh", "Rajesh", "Rahul", "Rabi", "Animesh", "Prakash"];
+        let currentIndex = 0;
+        let points = 0;
+        let timer;
+        let wrongTimer;
+
+        document.getElementById('display').innerHTML = arr1[currentIndex];
+
+        function Update() {
+            clearTimeout(timer);  // clear previous timer
+            clearTimeout(wrongTimer);  // clear previous wrong timer
+
+            timer = setTimeout(decrementPoints, 5000);  // set new timer
+
+            var a = document.getElementById("textinput").value;
+            if (a === arr1[currentIndex]) {
+                points++;
+                currentIndex++;
+                document.getElementById('textinput').value = '';
+                if (currentIndex < arr1.length) {
+                    document.getElementById('display').innerHTML = arr1[currentIndex];
+                } else {
+                    alert("All Names Displayed");
+                    document.getElementById('textinput').disabled = true;
+                }
+                document.getElementById('points').innerHTML = "Points: " + points;
+            } else {
+               
+            }
+            wrongTimer = setTimeout(function() {
+                    points--;
+                    if (points < 0) points = 0;
+                    document.getElementById('points').innerHTML = "Points: " + points;
+                }, 5000);
+        }
+
+        function decrementPoints() {
+            points--;
+            if (points < 0) points = 0;
+            document.getElementById('points').innerHTML = "Points: " + points;
+        }
+    </script>
+</body>
+</html>
+
