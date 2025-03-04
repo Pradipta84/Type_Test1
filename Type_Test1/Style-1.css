@@ -1,0 +1,79 @@
+html {
+    background-image: linear-gradient(260deg, rgb(214, 42, 214), rgb(26, 138, 218));
+}
+body {
+    background-image: linear-gradient(260deg, rgb(214, 42, 214), rgb(26, 138, 218));
+}
+/* Card container style */
+.card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 22px rgb(33, 220, 89);
+    border: 3px solid red;
+}
+
+/* Glowing effect for text */
+#display {
+    color: #35e2d4;
+    font-size: 24px;
+}
+
+/* Glowing effect for points */
+#points {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(191, 235, 60);
+}
+
+/* Glowing effect for input box */
+#textinput {
+    margin-top: 20px;
+    background-color: #000;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+    outline: none;
+    border-radius: 5px;
+}
+
+#message {
+outline-style: dashed;
+outline-color: #ffffff;
+margin-top: 32px;
+text-align: center;
+font-size: 18px;
+color: #ffff14;
+background-color: #2243e8;
+border: 2px solid #000;
+border-radius: 8px;
+display: inline-block; 
+padding: 10px;
+margin-left: 45%;
+}
+
+#message::before {
+/* This pseudo-element is set to not display */
+display: none; 
+}
+
+#message::after {
+margin-left: 45%;
+margin-top: 32px;
+display: inline-block;
+color: #ffffff;
+background-color: #176518;
+border: 2px solid #000;
+border-radius: 8px;
+}
+
